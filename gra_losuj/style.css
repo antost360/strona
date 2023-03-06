@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
+body {
+  margin: 0;
+  background-color: #0808089d;
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 15vh 85vh;
+  grid-template-areas:
+    "menu"
+    "main";
+  overflow-x: hidden;
+}
+#body_menu {
+  grid-area: menu;
+  background-color: #0808089d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-height: 85vh;
+}
+#body_main {
+  grid-area: main;
+  background-color: #8c8171;
+  box-sizing: border-box;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 85vh;
+  grid-template-areas: "menu main";
+}
+.guzik {
+  color: white;
+  background-color: black;
+  font-size: 20px;
+  font-family: "Audiowide", cursive;
+  border-radius: 30px;
+  padding: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bolder;
+}
+.guzik:hover {
+  background-color: white;
+  color: black;
+  transition: 1s;
+  border-color: white;
+}
+/*grid w mainie*/
+#menu {
+  overflow-y: hidden;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 100px;
+  grid-area: menu;
+  background-color: #38343475;
+  border-radius: 30px;
+  margin: 35px;
+}
+
+#main {
+  margin: 40px;
+  border-radius: 30px;
+  background-color: #38343475;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  height: 78vh;
+}
+/*grid w mainie*/
+/*wszystko od gier*/
+#div_game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.div_test {
+  background-color: #38343475;
+  position: relative;
+  width: 350px;
+  height: 250px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  padding: 25px;
+}
+.div_test_end {
+  background-color: #38343475;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  padding: 35px;
+}
+.div_guziki {
+  background-color: #38343475;
+  position: relative;
+  width: 850px;
+  height: 50px;
+  border-radius: 30px;
+  gap: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 35px;
+}
+.div_hint {
+  text-align: center;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border-radius: 30px;
+  gap: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 35px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: system-ui;
+}
+.pointer {
+  cursor: pointer;
+}
+.flaga {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  width: 250px;
+  height: 150px;
+  border-radius: 30px;
+}
+.flaga_position_end {
+  top: 20px;
+  width: 250px;
+  height: 150px;
+  border-radius: 30px;
+}
+.wynik {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  width: 200px;
+  height: 180px;
+  background-color: #38343475;
+  font-size: 100px;
+}
+.nazwa {
+  position: absolute;
+  font-weight: bold;
+  font-family: system-ui;
+  color: white;
+  font-size: 45px;
+}
+.h1 {
+  text-align: center;
+  font-size: 25px;
+  font-family: system-ui;
+  font-weight: bold;
+  color: white;
+}
+.div_guziki_od_gier {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 45px;
+}
+/*wszystko od gier*/

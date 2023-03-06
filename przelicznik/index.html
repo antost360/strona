@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+  </head>
+  <body id="body">
+    <div id="menu">
+      <a class="link" href="../start/index.html">
+        <button class="button">Start</button>
+      </a>
+
+      <a class="link" href="../przelicznik/index.html">
+        <button class="button">Przelicznik</button>
+      </a>
+
+      <a class="link" href="../kalkulator/index.html">
+        <button class="button">Kalkulator</button>
+      </a>
+
+      <a class="link" href="../panstwa/index.html">
+        <button class="button">Panstwa</button>
+      </a>
+
+      <a class="link" href="../toDo/client/index.html">
+        <button class="button">TASKS</button>
+      </a>
+    </div>
+
+    <div id="main">
+      <div id="tempPrzelicznik">
+        <form id="form">
+          <input
+            oninput="przeliczC(this.value)"
+            onchange="przeliczC(this.value)"
+            type="number"
+            class="guzik"
+            id="celsjusz"
+            placeholder="celsjusz"
+          />
+          <input
+            oninput="przeliczF(this.value)"
+            onchange="przeliczF(this.value)"
+            type="number"
+            class="guzik"
+            id="farenheit"
+            placeholder="farenheit"
+          />
+          <input
+            oninput="przeliczK(this.value)"
+            onchange="przeliczK(this.value)"
+            type="number"
+            class="guzik"
+            id="kelwin"
+            placeholder="kelwin"
+          />
+        </form>
+        <div class="wyniki">
+          <div class="wyglad">
+            <h3 id="C_C"></h3>
+            <h3 id="C_F"></h3>
+            <h3 id="C_K"></h3>
+          </div>
+          <div class="wyglad">
+            <h3 id="F_F"></h3>
+            <h3 id="F_C"></h3>
+            <h3 id="F_K"></h3>
+          </div>
+          <div class="wyglad">
+            <h3 id="K_K"></h3>
+            <h3 id="K_C"></h3>
+            <h3 id="K_F"></h3>
+          </div>
+        </div>
+      </div>
+
+      <div id="miaraPrzelicznik">
+        <form id="form2">
+          <input
+            oninput="przeliczM(this.value)"
+            onchange="przeliczM(this.value)"
+            type="number"
+            class="guzik"
+            id="metry"
+            placeholder="metry"
+          />
+          <input
+            oninput="przeliczMi(this.value)"
+            onchange="przeliczMi(this.value)"
+            type="number"
+            class="guzik"
+            id="mile"
+            placeholder="mile"
+          />
+          <input
+            oninput="przeliczFt(this.value)"
+            onchange="przeliczFt(this.value)"
+            type="number"
+            class="guzik"
+            id="stopy"
+            placeholder="stopy"
+          />
+          <input
+            oninput="przeliczCa(this.value)"
+            onchange="przeliczCa(this.value)"
+            type="number"
+            class="guzik"
+            id="cale"
+            placeholder="inches"
+          />
+        </form>
+        <div class="wyniki">
+          <div class="wyglad">
+            <h3 id="M_M"></h3>
+            <h3 id="M_Mi"></h3>
+            <h3 id="M_Ft"></h3>
+            <h3 id="M_Ca"></h3>
+          </div>
+          <div class="wyglad">
+            <h3 id="Mi_Mi"></h3>
+            <h3 id="Mi_M"></h3>
+            <h3 id="Mi_Ft"></h3>
+            <h3 id="Mi_Ca"></h3>
+          </div>
+          <div class="wyglad">
+            <h3 id="Ft_Ft"></h3>
+            <h3 id="Ft_M"></h3>
+            <h3 id="Ft_Mi"></h3>
+            <h3 id="Ft_Ca"></h3>
+          </div>
+          <div class="wyglad">
+            <h3 id="Ca_Ca"></h3>
+            <h3 id="Ca_M"></h3>
+            <h3 id="Ca_Mi"></h3>
+            <h3 id="Ca_Ft"></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

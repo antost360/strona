@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/f8537a5e86.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+  </head>
+  <body id="body">
+    <div id="menu">
+      <a class="link" href="../start/index.html">
+        <button class="guzik">Start</button>
+      </a>
+
+      <a class="link" href="../przelicznik/index.html">
+        <button class="guzik">Przelicznik</button>
+      </a>
+
+      <a class="link" href="../kalkulator/index.html">
+        <button class="guzik">Kalkulator</button>
+      </a>
+
+      <a class="link" href="../panstwa/index.html">
+        <button class="guzik">Panstwa</button>
+      </a>
+
+      <a class="link" href="../toDo/client/index.html">
+        <button class="guzik">TASKS</button>
+      </a>
+    </div>
+
+    <div id="main">
+      <div id="kalkulator" onmouseover="calcmax()" onmouseout="calcmin()">
+        <br />
+        <br />
+
+        <input type="text" id="input1" class="kalkulator" placeholder="liczba" />
+        <input type="text" id="input2" class="kalkulator" placeholder="liczba" />
+        <br />
+        <br />
+
+        <button class="guzik" onclick="plus()">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <button class="guzik" onclick="minus()">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+        <button class="guzik" onclick="pomnóż()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <button class="guzik" onclick="podziel()">
+          <i class="fa-solid fa-divide"></i>
+        </button>
+
+        <h1 id="h1"></h1>
+      </div>
+    </div>
+  </body>
+</html>

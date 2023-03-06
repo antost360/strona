@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body id="body">
+    <div id="body_menu">
+      <a class="link" href="../start/index.html">
+        <button class="guzik">Start</button>
+      </a>
+
+      <a class="link" href="../przelicznik/index.html">
+        <button class="guzik">Przelicznik</button>
+      </a>
+
+      <a class="link" href="../kalkulator/index.html">
+        <button class="guzik">Kalkulator</button>
+      </a>
+
+      <a class="link" href="../panstwa/index.html">
+        <button class="guzik">Panstwa</button>
+      </a>
+
+      <a class="link" href="../toDo/client/index.html">
+        <button class="guzik">TASKS</button>
+      </a>
+    </div>
+
+    <div id="body_main">
+      <div id="menu">
+        <a class="link" href="../gra_losuj/index.html">
+          <button class="guzik">COUNTRY GAME</button>
+        </a>
+
+        <input type="text" placeholder="COUNTRY NAME" id="input" onchange="search()" />
+        <div id="regiony">
+          <button class="guzik" onclick="europe()">EUROPE</button>
+          <button class="guzik" onclick="america_north()">NORTH AMERICA</button>
+          <button class="guzik" onclick="america_south()">SOUTH AMERICA</button>
+          <button class="guzik" onclick="america_central()">CENTRAL AMERICA</button>
+          <button class="guzik" onclick="asia()">ASIA</button>
+          <button class="guzik" onclick="africa()">AFRICA</button>
+          <button class="guzik" onclick="oceania()">AUSTRALIA</button>
+        </div>
+      </div>
+
+      <div id="main"></div>
+    </div>
+  </body>
+</html>
