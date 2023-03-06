@@ -23,7 +23,7 @@ async function getToDos() {
 
     const importance = document.createElement("h1")
     importance.classList.add("importance")
-    importance.innerHTML = json[i].important
+    importance.innerHTML = json[i].importance
 
     if (importance.innerHTML == "true") {
       importance.innerHTML = "IMPORTANT"
