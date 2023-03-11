@@ -34,10 +34,12 @@ function losuj() {
   return Math.floor(Math.random() * max)
 }
 
-function losuj_odp() {
-  //losuje liczbe zakres to liczba elemetów z tym przypadku tyle ile jest kraji w api
-  var max = 4
-  return Math.floor(Math.random() * max)
+function* shuffle(array) {
+  var i = array.length
+
+  while (i--) {
+    yield array.splice(Math.floor(Math.random() * (i + 1)), 1)[0]
+  }
 }
 
 function random_item(items) {
@@ -271,18 +273,29 @@ function stolice() {
   correct.classList.add("guzik_odp")
   correct.setAttribute("onclick", `setToTrue()`)
   correct.setAttribute("id", `correct`)
-  div_odp.appendChild(correct)
+  answers.push(correct)
 
   //3 zle odpoweidzi
-  for (var j = 0; j <= 2; j++) {
-    const bad = document.createElement("button")
+  var bad
+  for (var j = 0; j <= 3; j++) {
+    bad = document.createElement("button")
     const random = losuj()
     bad.innerHTML = json[random].capital
     bad.classList.add("guzik_odp")
     bad.setAttribute("onclick", `setToFalse(${random})`)
 
-    div_odp.appendChild(bad)
+    answers.push(bad)
   }
+  var ranNums = shuffle([0, 1, 2, 3])
+  var random1 = ranNums.next().value // first random number from array
+  var random2 = ranNums.next().value // second random number from array
+  var random3 = ranNums.next().value // etc.
+  var random4 = ranNums.next().value
+
+  div_odp.appendChild(answers[random1])
+  div_odp.appendChild(answers[random2])
+  div_odp.appendChild(answers[random3])
+  div_odp.appendChild(answers[random4])
 
   //tworzenie wyniku
   div_wynik = document.createElement("div")
@@ -371,18 +384,29 @@ function stolice_serce_tosamo() {
   correct.classList.add("guzik_odp")
   correct.setAttribute("onclick", `setToTrue()`)
   correct.setAttribute("id", `correct`)
-  div_odp.appendChild(correct)
+  answers.push(correct)
 
   //3 zle odpoweidzi
-  for (var j = 0; j <= 2; j++) {
-    const bad = document.createElement("button")
+  var bad
+  for (var j = 0; j <= 3; j++) {
+    bad = document.createElement("button")
     const random = losuj()
     bad.innerHTML = json[random].capital
     bad.classList.add("guzik_odp")
     bad.setAttribute("onclick", `setToFalse(${random})`)
 
-    div_odp.appendChild(bad)
+    answers.push(bad)
   }
+  var ranNums = shuffle([0, 1, 2, 3])
+  var random1 = ranNums.next().value // first random number from array
+  var random2 = ranNums.next().value // second random number from array
+  var random3 = ranNums.next().value // etc.
+  var random4 = ranNums.next().value
+
+  div_odp.appendChild(answers[random1])
+  div_odp.appendChild(answers[random2])
+  div_odp.appendChild(answers[random3])
+  div_odp.appendChild(answers[random4])
 
   //tworzenie wyniku
   div_wynik = document.createElement("div")
