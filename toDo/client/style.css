@@ -12,36 +12,33 @@
     "app";
   overflow: hidden;
 }
-.guzik {
+.button {
   border-color: rgb(0, 0, 0);
   border-radius: 5px;
   text-align: center;
   border-radius: 25px;
-  background-color: rgba(0, 0, 0, 0.76);
-  color: white;
+  color: black;
   font-weight: bold;
   font-family: "Audiowide", cursive;
   font-size: 20px;
-  padding: 20px;
+  padding: 10px;
   cursor: pointer;
 }
 .div {
-  width: 22vw;
-  height: 32vh;
+  min-width: 22vw;
+  min-height: 32vh;
   font-weight: bold;
   font-size: 20px;
   font-family: system-ui;
   padding: 15px;
-  border: 8px solid black;
+  border: 7px solid black;
   border-radius: 25px;
-  background-color: rgb(149, 149, 149);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 #menu_interfejs {
-  background-color: #9e9c9cc7;
   grid-area: interfejs;
   display: flex;
   flex-direction: row;
@@ -87,30 +84,13 @@
   flex-direction: column;
 }
 
-.tytul {
-  font-family: "Audiowide", cursive;
-  margin: 8px;
-  text-align: center;
-  border-radius: 40px;
-  color: white;
-  font-weight: bold;
-  font-size: 90px;
-  padding: 50px;
-}
-#tytul_div {
-  width: 60vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
 .importance {
   -webkit-text-stroke: 1px black;
   margin: 5px;
   font-weight: bold;
   font-family: "Audiowide", cursive;
-  font-size: 2.2em;
-  color: yellow;
+  font-size: 2.5em;
+  color: rgba(255, 255, 0, 0.733);
 }
 .font {
   font-family: "Russo One", sans-serif;
@@ -145,51 +125,6 @@
   gap: 40px;
 }
 .main_btn {
-  background-color: #d0c4bc;
-  color: black;
+  border-radius: 20px;
   border: 6px solid black;
-}
-/*okładka*/
-body {
-  margin: 0;
-  display: grid;
-  grid-template-columns: 100vw;
-  grid-template-rows: 15vh 85vh;
-  grid-template-areas:
-    "menu"
-    "main";
-}
-#menu {
-  grid-area: menu;
-  background-color: #2d2d2c;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 30px;
-}
-#main {
-  grid-area: main;
-  background-color: #8c8171;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.guzik_menu {
-  color: white;
-  background-color: black;
-  font-size: 20px;
-  font-family: "Audiowide", cursive;
-  border-radius: 30px;
-  padding: 20px;
-  text-decoration: none;
-  cursor: pointer;
-  font-weight: bolder;
-}
-.guzik_menu:hover {
-  background-color: white;
-  color: black;
-  transition: 1s;
-  border-color: white;
 }

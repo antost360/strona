@@ -22,12 +22,11 @@ app.get("/addToDo/:name/:dni/:selectedValue", (req, res) => {
 
   const tempTask = { name: name, daysLeft: dni, done: "do zrobienia :/", important: importance }
 
-  if (importance == true) {
+  if (importance == "true") {
     tasks.unshift(tempTask)
   } else {
     tasks.push(tempTask)
   }
-
   res.send("add to do")
 })
 

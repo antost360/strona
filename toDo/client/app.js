@@ -7,11 +7,6 @@ async function getToDos() {
   json = await data.json()
   zbiornik.innerHTML = ""
 
-  const tytul = document.createElement("h1")
-  tytul.innerHTML = "ALL TASKS"
-  tytul.classList.add("tytul")
-  zbiornik.appendChild(tytul)
-
   const app = document.createElement("div")
   app.setAttribute("id", "app_divs")
   zbiornik.appendChild(app)
@@ -23,11 +18,12 @@ async function getToDos() {
 
     const importance = document.createElement("h1")
     importance.classList.add("importance")
-    importance.innerHTML = json[i].importance
 
-    if (importance.innerHTML == "true") {
+    if (json[i].important == "true") {
       importance.innerHTML = "IMPORTANT"
-    } else importance.innerHTML = ""
+    } else {
+      importance.innerHTML = ""
+    }
     div.appendChild(importance)
 
     const name = document.createElement("h2")
@@ -57,21 +53,21 @@ async function getToDos() {
     }
 
     const button_true = document.createElement("button")
-    button_true.classList.add("guzik")
+    button_true.classList.add("button")
     button_true.classList.add("font")
-    button_true.innerHTML = "done :D"
+    button_true.innerHTML = "✅😎✅"
     button_true.setAttribute("onclick", `done_true(${json[i].name}, ${json[i].daysLeft}, ${json[i].important})`)
 
     const button_false = document.createElement("button")
-    button_false.classList.add("guzik")
+    button_false.classList.add("button")
     button_false.classList.add("font")
-    button_false.innerHTML = "in progress"
+    button_false.innerHTML = "❓😐❓"
     button_false.setAttribute("onclick", `done_false(${json[i].name}, ${json[i].daysLeft}, ${json[i].important})`)
 
     const button_remove = document.createElement("button")
-    button_remove.classList.add("guzik")
+    button_remove.classList.add("button")
     button_remove.classList.add("font")
-    button_remove.innerHTML = "delete"
+    button_remove.innerHTML = "❌⛔❌"
     button_remove.setAttribute("onclick", `single_remover(${json[i].name})`)
 
     const div_guzik = document.createElement("div")
@@ -127,7 +123,6 @@ async function sendData() {
       selectedValue = wazne.value
     }
   })
-
   //wyslanie zapytania do serwera, ktory z linku pobierze potrzebne dane
   const url = `${base_url}/addToDo/${nazwa}/${dni}/${selectedValue}`
 
@@ -145,14 +140,14 @@ function create_maker() {
   div.setAttribute("id", "interfejs")
 
   const input_name = document.createElement("input")
-  input_name.classList.add("guzik")
+  input_name.classList.add("button")
   input_name.setAttribute("name", "nazwa")
   input_name.setAttribute("type", "text")
   input_name.setAttribute("id", "nazwa")
   input_name.setAttribute("placeholder", "name")
 
   const input_days = document.createElement("input")
-  input_days.classList.add("guzik")
+  input_days.classList.add("button")
   input_days.setAttribute("name", "dni")
   input_days.setAttribute("type", "text")
   input_days.setAttribute("id", "dni")
@@ -160,7 +155,7 @@ function create_maker() {
 
   //wazne
   const div_important = document.createElement("div")
-  div_important.classList.add("guzik")
+  div_important.classList.add("button")
 
   const label_wazne = document.createElement("label")
   label_wazne.setAttribute("for", "wazne")
@@ -177,7 +172,7 @@ function create_maker() {
 
   //nie wazne
   const div_notImportant = document.createElement("div")
-  div_notImportant.classList.add("guzik")
+  div_notImportant.classList.add("button")
 
   const label_nieWazne = document.createElement("label")
   label_nieWazne.setAttribute("for", "nieWazne")
@@ -194,9 +189,9 @@ function create_maker() {
 
   //guzik wysylania
   const btn_send = document.createElement("button")
-  btn_send.innerHTML = "ADD TASK"
+  btn_send.innerHTML = "ADD TASK ➕"
   btn_send.setAttribute("onclick", "sendData()")
-  btn_send.classList.add("guzik")
+  btn_send.classList.add("button")
 
   //div pomocny do radio btn
   const div_radio = document.createElement("div")

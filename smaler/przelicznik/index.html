@@ -6,39 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="app.js"></script>
+    <link rel="stylesheet" href="../main.css" />
+
+    <script defer src="app.js"></script>
   </head>
   <body id="body">
     <div id="menu">
-      <a class="link" href="../start/index.html">
-        <button class="button">Start</button>
-      </a>
+      <a class="guzik" href="../start/index.html">Start</a>
 
-      <a class="link" href="../przelicznik/index.html">
-        <button class="button">Przelicznik</button>
-      </a>
+      <a class="guzik" href="../przelicznik/index.html">Przelicznik</a>
 
-      <a class="link" href="../kalkulator/index.html">
-        <button class="button">Kalkulator</button>
-      </a>
+      <a class="guzik" href="../kalkulator/index.html">kalkulator</a>
 
-      <a class="link" href="../panstwa/index.html">
-        <button class="button">Panstwa</button>
-      </a>
+      <a class="guzik" href="../panstwa/index.html">Panstwa</a>
 
-      <a class="link" href="../toDo/client/index.html">
-        <button class="button">TASKS</button>
-      </a>
+      <a class="guzik" href="../../toDo/client/index.html">TASKS</a>
     </div>
 
     <div id="main">
+      <h1 class="title">temperatura</h1>
       <div id="tempPrzelicznik">
         <form id="form">
           <input
             oninput="przeliczC(this.value)"
             onchange="przeliczC(this.value)"
             type="number"
-            class="guzik"
+            class="button"
             id="celsjusz"
             placeholder="celsjusz"
           />
@@ -46,7 +39,7 @@
             oninput="przeliczF(this.value)"
             onchange="przeliczF(this.value)"
             type="number"
-            class="guzik"
+            class="button"
             id="farenheit"
             placeholder="farenheit"
           />
@@ -54,7 +47,7 @@
             oninput="przeliczK(this.value)"
             onchange="przeliczK(this.value)"
             type="number"
-            class="guzik"
+            class="button"
             id="kelwin"
             placeholder="kelwin"
           />
@@ -77,14 +70,14 @@
           </div>
         </div>
       </div>
-
+      <h1 class="title">miara</h1>
       <div id="miaraPrzelicznik">
         <form id="form2">
           <input
             oninput="przeliczM(this.value)"
             onchange="przeliczM(this.value)"
             type="number"
-            class="guzik"
+            class="button"
             id="metry"
             placeholder="metry"
           />
@@ -92,7 +85,7 @@
             oninput="przeliczMi(this.value)"
             onchange="przeliczMi(this.value)"
             type="number"
-            class="guzik"
+            class="button"
             id="mile"
             placeholder="mile"
           />
@@ -100,7 +93,7 @@
             oninput="przeliczFt(this.value)"
             onchange="przeliczFt(this.value)"
             type="number"
-            class="guzik"
+            class="button"
             id="stopy"
             placeholder="stopy"
           />
@@ -108,7 +101,7 @@
             oninput="przeliczCa(this.value)"
             onchange="przeliczCa(this.value)"
             type="number"
-            class="guzik"
+            class="button"
             id="cale"
             placeholder="inches"
           />

@@ -1,10 +1,10 @@
 const body = document.getElementById("body")
-const main = document.getElementById("main")
-const menu = document.getElementById("menu")
+const main = document.getElementById("main_in")
+const menu = document.getElementById("menu_in")
 var json = []
 
 async function getData() {
-  var data = await fetch("https://restcountries.com/v2/all")
+  //var data = await fetch("https://restcountries.com/v2/all")
   json = await data.json()
 
   for (var i = 0; i <= json.length - 1; i++) {

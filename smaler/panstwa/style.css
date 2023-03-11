@@ -1,71 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
-body {
-  margin: 0;
-  background-color: #0808089d;
+#main {
+  background-color: red;
   display: grid;
-  grid-template-columns: 100vw;
-  grid-template-rows: 15vh 85vh;
-  grid-template-areas:
-    "menu"
-    "main";
-  overflow-x: hidden;
-}
-#body_menu {
-  grid-area: menu;
-  background-color: #0808089d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  max-height: 85vh;
-}
-#body_main {
-  grid-area: main;
-  background-color: #8c8171;
-  box-sizing: border-box;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: 85vh;
+  grid-template-columns: 25vw 75vw;
+  grid-template-rows: 100%;
   grid-template-areas: "menu main";
 }
-.guzik {
-  color: white;
-  background-color: black;
-  font-size: 20px;
-  font-family: "Audiowide", cursive;
-  border-radius: 30px;
-  padding: 20px;
-  text-decoration: none;
-  cursor: pointer;
-  font-weight: bolder;
-}
-.guzik:hover {
-  background-color: white;
-  color: black;
-  transition: 1s;
-  border-color: white;
-}
+
 /*panstwa*/
 
-#menu {
+#menu_in {
+  grid-area: menu;
   overflow-y: hidden;
-  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  gap: 100px;
-  grid-area: menu;
-  background-color: #38343475;
+  flex-direction: row;
   border-radius: 30px;
-  margin: 35px;
 }
 
-#main {
+#main_in {
   grid-area: main;
   overflow-y: auto;
-  min-height: 85vh;
+  height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
