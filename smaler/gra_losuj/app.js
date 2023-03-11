@@ -1,6 +1,6 @@
 const body = document.getElementById("body")
-const main = document.getElementById("main")
-const menu = document.getElementById("menu")
+const main = document.getElementById("main_in")
+const menu = document.getElementById("menu_in")
 var json = []
 //pobiera dane z api rest countries
 async function getData() {
@@ -767,9 +767,8 @@ function guziki_od_gier() {
 
   //guzik na powrót do listy kraji i filtrów
   const anchor = document.createElement("a")
-  anchor.setAttribute("href", "/panstwa/index.html")
+  anchor.setAttribute("href", "../panstwa/index.html")
   menu.appendChild(anchor)
-
   const button_anchor = document.createElement("button")
   button_anchor.classList.add("guzik")
   button_anchor.innerHTML = "COUNTRY LIST"

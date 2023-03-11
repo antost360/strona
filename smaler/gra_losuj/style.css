@@ -1,8 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 
+.guzik {
+  letter-spacing: 1.5px;
+  color: black;
+  font-size: 25px;
+  font-family: "Audiowide", cursive;
+  padding: 20px;
+  cursor: pointer;
+  font-weight: bolder;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: transform 0.5s;
+}
+.guzik:hover {
+  transform: translateY(15px);
+}
 body {
   margin: 0;
-  background-color: #0808089d;
+  background-color: rgb(226, 226, 226);
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: 15vh 85vh;
@@ -11,42 +26,26 @@ body {
     "main";
   overflow-x: hidden;
 }
-#body_menu {
+#menu {
   grid-area: menu;
-  background-color: #0808089d;
+  background-color: rgb(226, 226, 226);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
   max-height: 85vh;
 }
-#body_main {
+#main {
   grid-area: main;
-  background-color: #8c8171;
+  background-color: rgb(226, 226, 226);
   box-sizing: border-box;
   margin: 0;
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 22% 78%;
   grid-template-rows: 85vh;
   grid-template-areas: "menu main";
 }
-.guzik {
-  color: white;
-  background-color: black;
-  font-size: 20px;
-  font-family: "Audiowide", cursive;
-  border-radius: 30px;
-  padding: 20px;
-  text-decoration: none;
-  cursor: pointer;
-  font-weight: bolder;
-}
-.guzik:hover {
-  background-color: white;
-  color: black;
-  transition: 1s;
-  border-color: white;
-}
+
 .guzik_odp {
   color: white;
   background-color: black;
@@ -72,7 +71,7 @@ body {
   gap: 5px;
 }
 /*grid w mainie*/
-#menu {
+#menu_in {
   overflow-y: hidden;
   padding: 20px;
   display: flex;
@@ -81,15 +80,13 @@ body {
   flex-direction: column;
   gap: 100px;
   grid-area: menu;
-  background-color: #38343475;
   border-radius: 30px;
   margin: 35px;
 }
 
-#main {
+#main_in {
   margin: 40px;
   border-radius: 30px;
-  background-color: #38343475;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -151,7 +148,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 35px;
-  color: white;
+  color: black;
   font-size: 15px;
   font-weight: bold;
   font-family: system-ui;
@@ -196,7 +193,7 @@ body {
   font-size: 25px;
   font-family: system-ui;
   font-weight: bold;
-  color: white;
+  color: black;
 }
 .div_guziki_od_gier {
   display: flex;

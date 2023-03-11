@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 #main {
-  background-color: red;
   display: grid;
   grid-template-columns: 25vw 75vw;
   grid-template-rows: 100%;
@@ -15,8 +14,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  border-radius: 30px;
+  flex-direction: column;
+  height: 80vh;
+  gap: 30px;
 }
 
 #main_in {
@@ -63,12 +63,4 @@
   border-radius: 20px;
   height: 46px;
   width: 300px;
-}
-#regiony {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 20px;
 }

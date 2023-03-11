@@ -1,4 +1,6 @@
 :root {
+  --black: black;
+  --white: white;
   --light: rgb(226, 226, 226);
   --dark: rgba(0, 0, 0, 0.5);
   --blue: #5885af;
