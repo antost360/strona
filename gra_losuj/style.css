@@ -47,6 +47,30 @@ body {
   transition: 1s;
   border-color: white;
 }
+.guzik_odp {
+  color: white;
+  background-color: black;
+  font-size: 15px;
+  font-family: "Audiowide", cursive;
+  border-radius: 30px;
+  padding: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bolder;
+}
+.guzik_odp:hover {
+  background-color: white;
+  color: black;
+  transition: 1s;
+  border-color: white;
+}
+#div_odp {
+  height: 100px;
+  width: 350px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 5px;
+}
 /*grid w mainie*/
 #menu {
   overflow-y: hidden;
@@ -84,8 +108,8 @@ body {
 .div_test {
   background-color: #38343475;
   position: relative;
-  width: 350px;
-  height: 250px;
+  height: 290px;
+  width: 370px;
   border-radius: 30px;
   display: flex;
   flex-direction: column;

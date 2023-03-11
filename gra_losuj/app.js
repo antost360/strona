@@ -25,12 +25,23 @@ var div_podpowiedz = ""
 var div_guziki
 var hintsid = document.getElementById("hintsid")
 var licznik_serc
+var answers = []
 
 //funckja pozwala wylosować randomowe panstwo z api
 function losuj() {
   //losuje liczbe zakres to liczba elemetów z tym przypadku tyle ile jest kraji w api
   var max = json.length - 1
   return Math.floor(Math.random() * max)
+}
+
+function losuj_odp() {
+  //losuje liczbe zakres to liczba elemetów z tym przypadku tyle ile jest kraji w api
+  var max = 4
+  return Math.floor(Math.random() * max)
+}
+
+function random_item(items) {
+  return items[Math.floor(Math.random() * items.length)]
 }
 
 //pokazuje tylko ekran startowy dla każdej gry
@@ -242,10 +253,36 @@ function stolice() {
   //tworzenie inputa z funkcją sprawdzania odp.
   const input = document.createElement("input")
   input.setAttribute("id", "input")
-  input.setAttribute("onchange", "sprawdz_stolice(input_data)")
+  input.setAttribute("oninput", "sprawdz_stolice(input_data)")
   input.setAttribute("placeholder", "CAPITAL")
   input.classList.add("guzik")
   div_kraj1.appendChild(input)
+  input.style.display = "none"
+
+  answers = []
+  //miejsce na odpowiedzi
+  const div_odp = document.createElement("div")
+  div_odp.setAttribute("id", "div_odp")
+  div_kraj1.appendChild(div_odp)
+
+  //poprawna odpowiedz
+  const correct = document.createElement("button")
+  correct.innerHTML = kraj1.capital
+  correct.classList.add("guzik_odp")
+  correct.setAttribute("onclick", `setToTrue()`)
+  correct.setAttribute("id", `correct`)
+  div_odp.appendChild(correct)
+
+  //3 zle odpoweidzi
+  for (var j = 0; j <= 2; j++) {
+    const bad = document.createElement("button")
+    const random = losuj()
+    bad.innerHTML = json[random].capital
+    bad.classList.add("guzik_odp")
+    bad.setAttribute("onclick", `setToFalse(${random})`)
+
+    div_odp.appendChild(bad)
+  }
 
   //tworzenie wyniku
   div_wynik = document.createElement("div")
@@ -265,6 +302,14 @@ function stolice() {
   punkty.classList.add("h1")
   punkty.innerHTML = "SERCA: " + licznik_serc
   div_guziki.appendChild(punkty)
+}
+function setToTrue() {
+  input.value = kraj1.capital
+  sprawdz_stolice(input_data)
+}
+function setToFalse(data) {
+  input.value = json[data].capital
+  sprawdz_stolice(input_data)
 }
 function stolice_serce_tosamo() {
   if (licznik_serc == 1) {
@@ -312,6 +357,32 @@ function stolice_serce_tosamo() {
   input.setAttribute("placeholder", "CAPITAL")
   input.classList.add("guzik")
   div_kraj1.appendChild(input)
+  input.style.display = "none"
+
+  answers = []
+  //miejsce na odpowiedzi
+  const div_odp = document.createElement("div")
+  div_odp.setAttribute("id", "div_odp")
+  div_kraj1.appendChild(div_odp)
+
+  //poprawna odpowiedz
+  const correct = document.createElement("button")
+  correct.innerHTML = kraj1.capital
+  correct.classList.add("guzik_odp")
+  correct.setAttribute("onclick", `setToTrue()`)
+  correct.setAttribute("id", `correct`)
+  div_odp.appendChild(correct)
+
+  //3 zle odpoweidzi
+  for (var j = 0; j <= 2; j++) {
+    const bad = document.createElement("button")
+    const random = losuj()
+    bad.innerHTML = json[random].capital
+    bad.classList.add("guzik_odp")
+    bad.setAttribute("onclick", `setToFalse(${random})`)
+
+    div_odp.appendChild(bad)
+  }
 
   //tworzenie wyniku
   div_wynik = document.createElement("div")
@@ -332,6 +403,7 @@ function stolice_serce_tosamo() {
   punkty.innerHTML = "SERCA: " + licznik_serc
   div_guziki.appendChild(punkty)
 }
+
 function nazwy() {
   //losowanie
   kraj1 = json[losuj()]
@@ -396,7 +468,6 @@ function nazwy() {
   punkty.innerHTML = "POINTS: " + licznik_punktow
   div_guziki.appendChild(punkty)
 }
-
 //sprawdza czy podana odpowiedz jest prawidłowa
 function sprawdz_populacje(kraj1_population, kraj2_population, wybrany) {
   if ((kraj1_population > kraj2_population && wybrany == 1) || (kraj1_population < kraj2_population && wybrany == 2)) {
@@ -442,25 +513,29 @@ function sprawdz_stolice(data) {
   input_data = document.getElementById("input").value
   data = input_data
 
-  if (licznik_serc != 1) {
-    if (data.toUpperCase() == kraj1.capital.toUpperCase()) {
-      licznik_punktow++
-      punkty.innerHTML = "ŻYCIA: " + licznik_serc
-      stolice_serce_tosamo()
-      div_wynik.style.backgroundColor = "lightGreen"
-      div_wynik.innerHTML = "❤"
-    } else {
-      if (licznik_punktow == 0) {
-        licznik_punktow = 0
-      } else {
-        licznik_punktow--
-      }
-      stolice()
-      div_wynik.style.backgroundColor = "tomato"
-      div_wynik.innerHTML = "🤢"
-    }
+  if (data == "undefined") {
+    stolice_serce_tosamo()
   } else {
-    give_up_stolice()
+    if (licznik_serc != 1) {
+      if (data.toUpperCase() == kraj1.capital.toUpperCase()) {
+        licznik_punktow++
+        punkty.innerHTML = "ŻYCIA: " + licznik_serc
+        stolice_serce_tosamo()
+        div_wynik.style.backgroundColor = "lightGreen"
+        div_wynik.innerHTML = "❤"
+      } else {
+        if (licznik_punktow == 0) {
+          licznik_punktow = 0
+        } else {
+          licznik_punktow--
+        }
+        stolice()
+        div_wynik.style.backgroundColor = "tomato"
+        div_wynik.innerHTML = "🤢"
+      }
+    } else {
+      give_up_stolice()
+    }
   }
 }
 
@@ -486,12 +561,6 @@ function give_up_stolice() {
   img.classList.add("flaga_position_end")
   img.src = kraj1.flags.png
   div_kraj1.appendChild(img)
-
-  //fnal score
-  punkty = document.createElement("h1")
-  punkty.classList.add("h1")
-  punkty.innerHTML = "FINAL SCORE: " + licznik_punktow
-  div_kraj1.appendChild(punkty)
 
   const button_guees = document.createElement("button")
   button_guees.classList.add("guzik")
