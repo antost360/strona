@@ -17,6 +17,7 @@ body {
     "main";
 }
 #menu {
+  position: relative;
   grid-area: menu;
   background-color: var(--light);
   display: flex;
