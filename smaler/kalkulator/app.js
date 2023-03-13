@@ -1,18 +1,5 @@
 var body = document.getElementById("body")
 
-function calcmax() {
-  document.getElementById("kalkulator").style.padding = "65px"
-  document.getElementById("kalkulator").style.borderRadius = "85px"
-  document.getElementById("kalkulator").style.backgroundColor = "rgba(0, 0, 0, 0.75)"
-  document.getElementById("kalkulator").style.transition = "0.5s"
-}
-function calcmin() {
-  document.getElementById("kalkulator").style.padding = "40px"
-  document.getElementById("kalkulator").style.borderRadius = "70px"
-  document.getElementById("kalkulator").style.backgroundColor = "rgba(0, 0, 0, 0.5)"
-  document.getElementById("kalkulator").style.transition = "0.5s"
-}
-
 function plus() {
   var input1 = parseInt(document.getElementById("input1").value)
   var input2 = parseInt(document.getElementById("input2").value)

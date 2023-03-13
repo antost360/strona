@@ -28,9 +28,6 @@
   padding: 10px;
   border-radius: 15px;
   margin: 10px;
-  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
-  border-color: black;
-  box-shadow: 10px 7px 5px black;
 }
 
 .kalkulator:hover {
@@ -51,5 +48,5 @@
   padding: 40px;
   margin: 45px;
   height: 340px;
-  box-shadow: 10px 10px 5px black;
+  border: 5px solid black;
 }
